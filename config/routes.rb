@@ -15,7 +15,7 @@ Rails.application.routes.draw do
         get 'auth/authorize_request', to: 'authentication#authorize_request'
 
         resources :brands, only: [:index, :create]
-        resources :products, only: [:index, :create]
+        resources :products, only: [:index, :create, :update, :destroy]
         resources :clients, only: [:index, :create]
         resources :cards, only: [:create] do
           member do
