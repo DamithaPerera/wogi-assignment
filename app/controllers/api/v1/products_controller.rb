@@ -11,7 +11,7 @@ class Api::V1::ProductsController < ApplicationController
         if product.save
           render json: product, status: :created
         else
-          render json: product.errors, status: :unprocessable_entity
+          render json: { errors: product.errors.full_messages }, status: :unprocessable_entity
         end
     end
 
@@ -36,6 +36,6 @@ class Api::V1::ProductsController < ApplicationController
     private
 
     def product_params
-        params.require(:product).permit(:name, :price, :currency, :brand_id, customizable_fields: {})
+        params.require(:product).permit(:name, :price, :currency, :brand_id, :state, customizable_fields: {})
     end
 end
