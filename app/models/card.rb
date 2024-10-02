@@ -4,6 +4,6 @@ class Card < ApplicationRecord
     validates :activation_number, presence: true
 
     def cancel
-        update(cancelled_at: Time.now)
+        update(cancelled_at: Time.current)
     end
 end
