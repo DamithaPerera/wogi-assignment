@@ -17,6 +17,7 @@ Rails.application.routes.draw do
         resources :brands, only: [:index, :create]
         resources :products, only: [:index, :create, :update, :destroy]
         resources :clients, only: [:index, :create]
+        resources :reports, only: [:index]
         resources :cards, only: [:create] do
           member do
             put :cancel
