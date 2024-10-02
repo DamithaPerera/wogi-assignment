@@ -1,4 +1,6 @@
 class Api::V1::ReportsController < ApplicationController
+    before_action :authorize_request
+
     def index
         report_data = generate_report
 

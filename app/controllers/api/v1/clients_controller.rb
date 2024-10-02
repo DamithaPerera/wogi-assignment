@@ -1,4 +1,6 @@
 class Api::V1::ClientsController < ApplicationController
+    before_action :authorize_request
+
     def index
         clients = Client.all
         render json: clients, status: :ok
